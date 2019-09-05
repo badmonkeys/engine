@@ -1,0 +1,32 @@
+= Evo Engine
+Michael Kelly <michaelkelly322@gmail.com>
+:source-highlighter: coderay
+
+
+== Project Setup
+This is my basic setup for a new CMake project:
+
+[source,bash]
+----
+.
+├── build
+│   └── .keep
+├── CMakeLists.txt
+└── evo.cpp
+----
+
+This is my go to setup for creating a basic project. The main entrypoint isn't complicated either.  This is just a basic template I use when creating new projects:
+
+[source,cpp]
+----
+// evo.cpp
+
+#include <iostream>
+
+int main() {
+  std::cout << "Press [ENTER] to exit..." << std::endl;
+  std::cin.get();
+
+  return 0;
+}
+----
