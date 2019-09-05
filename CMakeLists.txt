@@ -13,5 +13,5 @@ add_definitions(
 
 add_subdirectory(engine)
 
-add_executable(evo evo.cpp)
+add_executable(evo app.cpp)
 target_link_libraries(evo evoengine)
