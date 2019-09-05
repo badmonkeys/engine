@@ -1,6 +1,9 @@
 #include <iostream>
 
+#include <evo.h>
+
 int main() {
-  std::cout << "Press [ENTER] to exit..." << std::endl;
+  Evo::Logger l("myLogger");
+  l.info("Press [ENTER] to exit...");
   std::cin.get();
 }

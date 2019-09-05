@@ -6,13 +6,19 @@ Michael Kelly <michaelkelly322@gmail.com>
 == Project Setup
 This is my basic setup for a new CMake project:
 
-[source,bash]
+[source]
 ----
-.
 ├── build
-│   └── .keep
+├── engine
+│   ├── include
+│   │   ├── evo.h
+│   │   └── logger.h
+│   ├── src
+│   │   └── logger.cpp
+│   └── CMakeLists.txt
 ├── CMakeLists.txt
-└── evo.cpp
+├── evo.cpp
+└── README.asciidoc
 ----
 
 This is my go to setup for creating a basic project. The main entrypoint isn't complicated either.  This is just a basic template I use when creating new projects:
@@ -24,9 +30,11 @@ This is my go to setup for creating a basic project. The main entrypoint isn't c
 #include <iostream>
 
 int main() {
-  std::cout << "Press [ENTER] to exit..." << std::endl;
+  Evo::Logger _logger("myLogger");
+  _logger.info("Press [ENTER] to exit...");
   std::cin.get();
 
   return 0;
 }
 ----
+
