@@ -4,16 +4,23 @@ Michael Kelly <michaelkelly322@gmail.com>
 
 
 == Project Setup
-This is my basic setup for a new CMake project:
+I'm going to assume some knowledge of basic CMake or C++ project structure and pick a solid starting point for our project. The CMake configuration for this project has 2 basic artifacts, `libevoengine.so` and the executable `evo` that is linked with it.  Building the initial project follows the standard cmake method:
 
+1. `cd build`
+2. `cmake ..`
+3. `make`
+
+To run the program, while still in `build/` just execute `./evo`.
+
+.Initial project directory structure
 [source]
 ----
-├── build
-├── engine
+├── build/
+├── engine/
 │   ├── include
 │   │   ├── evo.h
 │   │   └── logger.h
-│   ├── src
+│   ├── src/
 │   │   └── logger.cpp
 │   └── CMakeLists.txt
 ├── CMakeLists.txt
@@ -21,20 +28,12 @@ This is my basic setup for a new CMake project:
 └── README.asciidoc
 ----
 
-This is my go to setup for creating a basic project. The main entrypoint isn't complicated either.  This is just a basic template I use when creating new projects:
+In this program, `evo.cpp` is our `main` entrypoint and it includes `engine/include/evo.h` that acts as a single point of inclusion for all engine header files.  Right now, `evo.cpp` just outputs some text and waits for the user to press the enter key to exit. Output is sent to the console using the `Evo::Logger` class defined in `engine/include/logger.h`.
 
-[source,cpp]
-----
-// evo.cpp
+We'll use this structure as a starting point for building out the engine design.
 
-#include <iostream>
+== Entrypoint
 
-int main() {
-  Evo::Logger _logger("myLogger");
-  _logger.info("Press [ENTER] to exit...");
-  std::cin.get();
+=== Why take main
 
-  return 0;
-}
-----
-
+=== Abstracting an application
