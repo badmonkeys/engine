@@ -3,6 +3,7 @@ Michael Kelly <michaelkelly322@gmail.com>
 :doctype: book
 :source-highlighter: coderay
 
+include::test_page.adoc[]
 
 == Project Setup
 I'm going to assume some knowledge of basic CMake or C++ project structure and pick a solid starting point for our project. The CMake configuration for this project has 2 basic artifacts, `libevoengine.so` and the executable `evo` that is linked with it.  Building the initial project follows the standard cmake method:
