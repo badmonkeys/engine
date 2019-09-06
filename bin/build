@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd build
+
+echo ">>>>>>>>>>>>>>>>>>>>>>>>> Building App <<<<<<<<<<<<<<<<<<<<<<<<<<<"
+cmake ..
+make -j `nproc`
+
+echo ">>>>>>>>>>>>>>>>>>>>>>>>> Building Docs <<<<<<<<<<<<<<<<<<<<<<<<<<<"
+asciidoctor-pdf ../README.asciidoc -o README.pdf
+
+cd ..

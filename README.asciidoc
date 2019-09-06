@@ -1,5 +1,6 @@
 = Evo Engine
 Michael Kelly <michaelkelly322@gmail.com>
+:doctype: book
 :source-highlighter: coderay
 
 
